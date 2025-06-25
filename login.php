@@ -6,7 +6,7 @@ $error = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = trim($_POST['username'] ?? '');
-    $password = $_POST['password'] ?? '';
+    $password = $_POST['psword'] ?? '';
 
     if ($username === '' || $password === '') {
         $error = "Veuillez remplir tous les champs.";
