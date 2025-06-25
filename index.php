@@ -7,10 +7,6 @@ if (!isset($_SESSION['id_user'])) {
     exit;
 }
 
-// Si connecté, afficher le contenu de index.php (exemple simple)
-?>
-
-<?php
 require_once 'link-db.php';
 
 if (!isset($_SESSION['id_user'])) {
