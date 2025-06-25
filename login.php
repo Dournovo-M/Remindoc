@@ -6,16 +6,16 @@ $error = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = trim($_POST['username'] ?? '');
-    $password = $_POST['psword'] ?? '';
+    $password = $_POST['password'] ?? '';
 
     if ($username === '' || $password === '') {
         $error = "Veuillez remplir tous les champs.";
     } else {
-        $stmt = $pdo->prepare("SELECT id_user, password FROM users WHERE username = :username");
+        $stmt = $pdo->prepare("SELECT id_user, psword FROM users WHERE username = :username");
         $stmt->execute(['username' => $username]);
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        if ($user && password_verify($password, $user['password'])) {
+        if ($user && $password === $user['psword']) {
             $_SESSION['id_user'] = $user['id_user'];
             $_SESSION['username'] = $username;
             header('Location: index.php');
@@ -26,6 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="fr">
