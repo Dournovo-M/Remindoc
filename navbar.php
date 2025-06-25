@@ -52,8 +52,8 @@ if (session_status() === PHP_SESSION_NONE) {
 <div class="navbar">
     <div class="logo">Remindoc</div>
     <div class="user-info">
-        <span>Connecté en tant que <strong><?= htmlspecialchars($_SESSION['username']) ?></strong></span>
         <a class="btn" href="settings.php">Paramètres</a>
+        <span>Connecté en tant que <strong><?= htmlspecialchars($_SESSION['username']) ?></strong></span>
         <a class="btn" href="logout.php">Se déconnecter</a>
     </div>
 </div>
