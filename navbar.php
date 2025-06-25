@@ -32,17 +32,19 @@ if (session_status() === PHP_SESSION_NONE) {
         font-weight: 500;
     }
 
-    .navbar .logout-btn {
+    .navbar .btn {
         background-color: #004d40;
         border: none;
         color: white;
         padding: 8px 16px;
         border-radius: 5px;
         text-decoration: none;
+        cursor: pointer;
+        font-size: 14px;
         transition: background-color 0.3s ease;
     }
 
-    .navbar .logout-btn:hover {
+    .navbar .btn:hover {
         background-color: #00251a;
     }
 </style>
@@ -51,6 +53,7 @@ if (session_status() === PHP_SESSION_NONE) {
     <div class="logo">Remindoc</div>
     <div class="user-info">
         <span>Connecté en tant que <strong><?= htmlspecialchars($_SESSION['username']) ?></strong></span>
-        <a class="logout-btn" href="logout.php">Se déconnecter</a>
+        <a class="btn" href="settings.php">Paramètres</a>
+        <a class="btn" href="logout.php">Se déconnecter</a>
     </div>
 </div>
