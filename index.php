@@ -19,8 +19,19 @@ if (!isset($_SESSION['id_user'])) {
 
 <body>
     <?php include 'navbar.php'; ?>
-    <h1>Bienvenue <?= htmlspecialchars($_SESSION['username']) ?> sur Remindoc !</h1>
-    <p>Ceci est la page principale après connexion.</p>
-    <p><a href="logout.php">Se déconnecter</a></p>
+
+    <div class="main-content" style="padding: 30px;">
+        <h1>Bienvenue <?= htmlspecialchars($_SESSION['username']) ?> sur Remindoc !</h1>
+
+        <?php if (isset($_GET['success'])): ?>
+            <div class="alert success">Mail envoyé avec succès.</div>
+        <?php elseif (isset($_GET['error'])): ?>
+            <div class="alert error"><?= htmlspecialchars($_GET['error']) ?></div>
+        <?php endif; ?>
+
+        <form method="post" action="send-mail.php">
+            <button type="submit" class="btn-mail">Envoyer un mail de rappel</button>
+        </form>
+    </div>
 </body>
 </html>
