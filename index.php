@@ -16,7 +16,9 @@ if (!isset($_SESSION['id_user'])) {
     <meta charset="UTF-8" />
     <title>Accueil - Remindoc</title>
 </head>
+
 <body>
+    <?php include 'navbar.php'; ?>
     <h1>Bienvenue <?= htmlspecialchars($_SESSION['username']) ?> sur Remindoc !</h1>
     <p>Ceci est la page principale après connexion.</p>
     <p><a href="logout.php">Se déconnecter</a></p>
