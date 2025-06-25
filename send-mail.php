@@ -21,7 +21,7 @@ try {
     $mail->Host       = 'smtp.gmail.com';
     $mail->SMTPAuth   = true;
     $mail->Username   = 'dournovo.m06@gmail.com';        // 🔒 à modifier
-    $mail->Password   = '7@8fFb#LooY786b';            // 🔒 mot de passe d'application
+    $mail->Password   = 'nitz uhef dcoo vooo';            // 🔒 mot de passe d'application
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     $mail->Port       = 587;
 
